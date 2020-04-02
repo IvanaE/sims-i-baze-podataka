@@ -1,0 +1,5 @@
+{
+    "columns":["sifra_zaposlenog", "ime_prezime", "datum_rodjenja", "tip_predavaca"],
+    "key": "sifra_zaposlenog",
+    "linked_files": ["nastavnici_data"]
+}
