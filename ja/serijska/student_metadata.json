@@ -1,0 +1,5 @@
+{
+    "columns":["broj_indeksa", "ime_prezime", "polozeni_predmeti", "nepolozeni_predmeti"],
+    "key": "broj_indeksa",
+    "putanja":["predmeti_data"]
+}
