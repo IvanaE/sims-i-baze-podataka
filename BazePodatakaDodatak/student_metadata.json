@@ -1,5 +1,0 @@
-{
-    "columns":["broj_indeksa", "ime_prezime", "datum_rodjenja", "predmeti"],
-    "key": "broj_indeksa",
-    "linked_files": ["predmeti_data"]
-}
