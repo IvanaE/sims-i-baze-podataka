@@ -37,6 +37,8 @@ if __name__ == "__main__":
     menu_bar.addMenu(help_menu)
 
     tool_bar = QtWidgets.QToolBar(main_window)
+
+    central_widget = QtWidgets.QTabWidget(main_window)
     #========================================================== dodajem akcije u tooolbar
 
    
