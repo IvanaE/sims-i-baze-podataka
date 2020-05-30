@@ -1,5 +1,8 @@
-class Predmet:
-    def __init__(self, id, naziv, silabus):
-        self.id = id
+class Predmet():
+    def __init__(self, sifra_predmeta, naziv, broj_casova_nedeljno, broj_semestra, nastavnici=[]):
+        super().__init__()
+        self.sifra_predmeta = sifra_predmeta
         self.naziv = naziv
-        self.silabus = silabus
+        self.broj_casova_nedeljno = broj_casova_nedeljno
+        self.broj_semestra = broj_semestra
+        self.nastavnici = nastavnici
