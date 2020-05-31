@@ -1,0 +1,7 @@
+{
+    "columns":["naslov", "ISBN", "autor", "zanr", "broj_stranica", "godina_izdavanja", "broj_clanske_karte"],
+    "key": "ISBN",
+    "linked_files":["clan_data"],
+    "path_to_file":"knjiga_data",
+    "type":"Sequential"
+}
