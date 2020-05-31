@@ -8,14 +8,11 @@ class DataHandler():
     def get_all(self):
         pass
 
-    def edit(self, id, obj):
+    def edit(self, obj):
         pass
 
     def delete_one(self, id):
         pass
 
     def insert(self, obj):
-        pass
-
-    def insert_many(self, lista):
         pass
