@@ -1,0 +1,5 @@
+{
+    "columns":["indeks", "ime", "prezime", "datum_rodjenja", "predmeti"],
+    "key": "indeks",
+    "linked_files":["predmeti_data"]
+}
