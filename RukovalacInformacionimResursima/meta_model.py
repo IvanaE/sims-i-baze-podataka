@@ -1,4 +1,5 @@
-class Model:
-    def __init__(self, name, data = []):
+class MetaModel:
+    def __init__(self, id, name, metadata):
+        self.id = id
         self.name = name
-        self.data = data
+        self.metadata = metadata
