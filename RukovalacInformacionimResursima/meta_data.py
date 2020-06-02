@@ -1,5 +1,6 @@
 class MetaData:
-    def __init__(self, name, columnName, type, index):
+    def __init__(self, id, name, columnName, type, index):
+        self.id = id
         self.name = name
         self.columnName = columnName
         self.type = type

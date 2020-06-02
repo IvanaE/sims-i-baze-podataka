@@ -3,10 +3,10 @@ import json
 import pickle #koristimo pickle za serijalizaciju i deserijalizaciju objekata
 
 class SerialFileHandler(DataHandler):
-    def __init__(self, filepath, meta_filepath):
+    def __init__(self, filepath, metaModel):
         super().__init__()
         self.filepath = filepath
-        self.meta_filepath = meta_filepath
+        self.metaModel = metaModel
         self.data = []
         self.metadata = {}
         self.load_data()

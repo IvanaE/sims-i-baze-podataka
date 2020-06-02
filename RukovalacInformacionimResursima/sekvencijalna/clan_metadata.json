@@ -1,5 +1,0 @@
-{
-    "columns":["ime", "prezime", "broj_clanske_karte", "godina_rodjenja", "knjige"],
-    "key": "broj_clanske_karte",
-    "linked_files":["knjiga_data"]
-}

@@ -1,33 +1,51 @@
 import sys
 from PySide2 import QtWidgets, QtGui, QtCore
+from PySide2.QtWidgets import QGridLayout, QToolBar, QToolButton, QPlainTextEdit, QAction, QListWidget, QVBoxLayout, \
+    QDockWidget
 
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    main_window = QtWidgets.QMainWindow()
-    main_window.resize(640, 480)
-    main_window.setWindowTitle("InfHandler")
-    main_window.setWindowIcon(QtGui.QIcon("icons8-edit-file-64.png"))
+from meta_model_handler import MetaModelHandler
+from ui.list_dock import ListDock
 
-    menu_bar = QtWidgets.QMenuBar(main_window)
-    file_menu = QtWidgets.QMenu("File", menu_bar)
-    edit_menu = QtWidgets.QMenu("Edit", menu_bar)
-    view_menu = QtWidgets.QMenu("View", menu_bar)
-    help_menu = QtWidgets.QMenu("Help", menu_bar)
+metaModelHandler = MetaModelHandler()
 
-    menu_bar.addMenu(file_menu)
-    menu_bar.addMenu(edit_menu)
-    menu_bar.addMenu(view_menu)
-    menu_bar.addMenu(help_menu)
+def exit():
+    app.closeAllWindows()
 
-    tool_bar = QtWidgets.QToolBar(main_window)
+def load():
+    metaModelHandler.load()
+    listDock.init(metaModelHandler)
 
-    central_widget = QtWidgets.QTabWidget(main_window)
+def save():
+    metaModelHandler.save()
 
+app = QtWidgets.QApplication(sys.argv)
+main_window = QtWidgets.QMainWindow()
+main_window.resize(640, 480)
+main_window.setWindowTitle("InfHandler")
+main_window.setWindowIcon(QtGui.QIcon("icons8-edit-file-64.png"))
+metaModelHandler.load()
+toolBar = QToolBar()
 
-    main_window.setMenuBar(menu_bar)
-    main_window.addToolBar(tool_bar)
-    main_window.setCentralWidget(central_widget)
-    main_window.show()
-    # menu_bar.setParent(main_window)
-    sys.exit(app.exec_())
+toolLoadButton = QToolButton()
+toolLoadButton.setText('Load')
+toolLoadButton.clicked.connect(load)
+toolBar.addWidget(toolLoadButton)
+
+toolSaveButton = QToolButton()
+toolSaveButton.setText('Save')
+toolSaveButton.clicked.connect(save)
+toolBar.addWidget(toolSaveButton)
+
+toolExitButton = QToolButton()
+toolExitButton.setText('Exit')
+toolExitButton.clicked.connect(exit)
+toolBar.addWidget(toolExitButton)
+main_window.addToolBar(toolBar)
+
+listDock = ListDock('Meta Model list', main_window)
+
+main_window.addDockWidget(QtCore.Qt.LeftDockWidgetArea, listDock)
+
+main_window.show()
+sys.exit(app.exec_())
 
