@@ -1,4 +1,6 @@
 class Model:
-    def __init__(self, name, data = []):
+    def __init__(self, name, metaModel, dataSourceType, dataSource):
         self.name = name
-        self.data = data
+        self.metaModel = metaModel
+        self.dataSourceType = dataSourceType
+        self.dataSource = dataSource

@@ -9,7 +9,7 @@ class MetaModelHandler:
 
         self.metaModels = []
 
-        file = open('metaModels.txt', 'r')
+        file = open('c:\\Users\\vasaandja\\Desktop\\Nebojsa-3\\sims-bp-2019-version5g1-V4\\metaModels.txt', 'r')
 
         for line in file.readlines():
             data = line.strip().split('|')
@@ -21,7 +21,7 @@ class MetaModelHandler:
 
         file.close()
 
-        file = open('metaData.txt', 'r')
+        file = open('c:\\Users\\vasaandja\\Desktop\\Nebojsa-3\\sims-bp-2019-version5g1-V4\\metaData.txt', 'r')
 
         for line in file.readlines():
             data = line.strip().split('|')
@@ -41,20 +41,20 @@ class MetaModelHandler:
 
     def save(self):
 
-        file = open('metaModels.txt', 'w')
+        file = open('c:\\Users\\vasaandja\\Desktop\\Nebojsa-3\\sims-bp-2019-version5g1-V4\\metaModels.txt', 'w')
 
         for model in self.metaModels:
             file.write(model.id + '|' + model.name + '\n')
 
         file.close()
 
-        file = open('metaData.txt', 'w')
+        file = open('c:\\Users\\vasaandja\\Desktop\\Nebojsa-3\\sims-bp-2019-version5g1-V4\\metaData.txt', 'w')
 
         for model in self.metaModels:
 
             for data in model.metadata:
                 file.write(data.id + '|' + data.name + '|' + data.columnName + '|' + data.type + '|'
-                           + data.index + '|' + model.id + '\n')
+                           + str(data.index) + '|' + model.id + '\n')
 
         file.close()
 

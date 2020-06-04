@@ -1,26 +1,46 @@
 from PySide2 import QtWidgets, QtGui, QtCore
-from PySide2.QtWidgets import QListWidget, QListView
+from PySide2.QtWidgets import QListWidget, QListView, QVBoxLayout, QWidget
 
+from ui.list_dock_meta_model import ListDockMetaModel
 from ui.list_dock_model import ListDockModel
 
 
 class ListDock(QtWidgets.QDockWidget):
     metaModelHandler = None
 
-    def __init__(self, title, parent):
+    def __init__(self, title, parent, handleMetamodelClick):
         super().__init__(title, parent)
 
-        self.list = QListView()
-        self.model = ListDockModel()
-        self.list.setModel(self.model)
-        self.list.clicked.connect(self.itemClick)
-        self.setWidget(self.list)
+        self.main_layout = QVBoxLayout()
+        self.widget = QWidget()
 
-    def init(self, metaModelHandler):
+        self.handleMetamodelClick = handleMetamodelClick
+
+        self.listMetaModel = QListView()
+        self.listDockMetaModel = ListDockMetaModel()
+        self.listMetaModel.setModel(self.listDockMetaModel)
+        self.listMetaModel.clicked.connect(self.itemClickMetaModel)
+        self.main_layout.addWidget(self.listMetaModel)
+
+        self.listModel = QListView()
+        self.listDockModel = ListDockModel()
+        self.listModel.setModel(self.listDockModel)
+        self.listModel.clicked.connect(self.itemClickModel)
+
+        self.main_layout.addWidget(self.listModel)
+        self.widget.setLayout(self.main_layout)
+
+        self.setWidget(self.widget)
+
+    def init(self, metaModelHandler, models):
 
         self.metaModelHandler = metaModelHandler
-        self.model.init(metaModelHandler)
-        self.model.layoutChanged.emit()
+        self.listDockMetaModel.init(metaModelHandler)
+        self.listDockMetaModel.layoutChanged.emit()
 
-    def itemClick(self, item):
-        print(item.row())
+    def itemClickMetaModel(self, item):
+        self.handleMetamodelClick(self.metaModelHandler.metaModels[item.row()])
+
+    def itemClickModel(self, item):
+        print()
+        #self.handleMetamodelClick(self.metaModelHandler.metaModels[item.row()])

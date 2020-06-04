@@ -1,5 +1,5 @@
 from enum import Enum
 class DataSourceType(Enum):
-    SERIAL = 1
-    SEQ = 2
+    SEQ = 1
+    SERIAL = 2
     MYSQL = 3

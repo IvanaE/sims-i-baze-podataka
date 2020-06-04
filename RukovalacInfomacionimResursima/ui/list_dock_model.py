@@ -3,25 +3,25 @@ from PySide2.QtCore import QAbstractListModel, Qt
 
 class ListDockModel(QAbstractListModel):
 
-    metaModelHandler = None
+    models = None
 
     def __init__(self, parent = None):
         QAbstractListModel.__init__(self, parent)
 
-    def init(self, metaModelHandler):
-        self.metaModelHandler = metaModelHandler
+    def init(self, models):
+        self.models = models
 
     def data(self, index, role):
 
-        if self.metaModelHandler == None:
+        if self.models == None:
             return None
 
         if role == Qt.DisplayRole:
-            return self.metaModelHandler.metaModels[index.row()].name
+            return self.models[index.row()].name
 
     def rowCount(self, index):
 
-        if self.metaModelHandler == None:
+        if self.models == None:
             return 0
 
-        return len(self.metaModelHandler.metaModels)
+        return len(self.models)
