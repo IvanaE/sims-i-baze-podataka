@@ -1,4 +1,0 @@
-1|name|name|string|0|1
-2|count|count|int|0|1
-3|firstName|first name|string|0|2
-4|lastName|last name|string|0|2
