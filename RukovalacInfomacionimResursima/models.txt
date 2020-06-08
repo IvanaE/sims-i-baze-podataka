@@ -1,0 +1,3 @@
+Name|Source|DataSourceType.SEQ|1
+student|Source|DataSourceType.SEQ|1
+visokoskolska_ustanova|Source|DataSourceType.SEQ|1

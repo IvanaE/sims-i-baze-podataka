@@ -1,2 +1,4 @@
 1|test1
 2|test2
+3|student_model
+4|visokoskolska_ustanova_model

@@ -4,29 +4,45 @@ from PySide2.QtWidgets import QGridLayout, QToolBar, QToolButton, QPlainTextEdit
     QDockWidget, QTabWidget
 
 from meta_model_handler import MetaModelHandler
+from model_handler import ModelHandler
 from ui.list_dock import ListDock
+from ui.login_form import LoginForm
 from ui.meta_model_view_widget import MetaModelViewWidget
+from ui.model_view_widget import ModelViewWidget
 
 metaModelHandler = MetaModelHandler()
+modelHandler = ModelHandler(metaModelHandler)
 
 def exit():
     app.closeAllWindows()
 
 def load():
     metaModelHandler.load()
-    listDock.init(metaModelHandler, [])
+    modelHandler.load()
+    listDock.init(metaModelHandler, modelHandler)
 
 def save():
     metaModelHandler.save()
+    modelHandler.save()
 
 def handleMetamodelClick(metaModel):
     metaModelWidget = MetaModelViewWidget(central_widget, metaModel)
     central_widget.addTab(metaModelWidget, QtGui.QIcon("icons8-edit-file-64.png"), metaModel.name + ' - Meta Model')
 
+def handleModelClick(model):
+    modelWidget = ModelViewWidget(central_widget, model)
+    central_widget.addTab(modelWidget, QtGui.QIcon("icons8-edit-file-64.png"), model.name + ' - Model')
+
 def delete_tab(index):
     central_widget.removeTab(index)
 
+def login():
+    loginForm.close()
+
+
+
 app = QtWidgets.QApplication(sys.argv)
+loginForm = LoginForm(login)
 main_window = QtWidgets.QMainWindow()
 main_window.resize(840, 680)
 main_window.setWindowTitle("InfHandler")
@@ -52,7 +68,7 @@ main_window.addToolBar(toolBar)
 
 #metamodel list
 
-listDock = ListDock('Meta Model list', main_window, handleMetamodelClick)
+listDock = ListDock('Meta Model list', main_window, handleMetamodelClick, handleModelClick)
 main_window.addDockWidget(QtCore.Qt.LeftDockWidgetArea, listDock)
 
 #central widget
@@ -61,6 +77,10 @@ central_widget = QTabWidget(main_window)
 central_widget.setTabsClosable(True)
 central_widget.tabCloseRequested.connect(delete_tab)
 main_window.setCentralWidget(central_widget)
+
+loginForm.show()
+loginForm.exec_()
+
 
 main_window.show()
 sys.exit(app.exec_())
