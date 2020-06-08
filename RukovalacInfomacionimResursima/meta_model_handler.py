@@ -9,11 +9,7 @@ class MetaModelHandler:
 
         self.metaModels = []
 
-<<<<<<< HEAD
         file = open('c:\\Users\\vasaandja\\Desktop\\Nadica\\Nada-4\\sims-bp-2019-version5g1\metaModels.txt', 'r')
-=======
-        file = open('c:\\Users\\Ica\\Desktop\\sims-i-baze-podataka\\RukovalacInformacionimResursima\\metaModels.txt', 'r')
->>>>>>> 0ad26e78a436060765ff82a0b262c7fe62ea8cd6
 
         for line in file.readlines():
             data = line.strip().split('|')
@@ -25,11 +21,7 @@ class MetaModelHandler:
 
         file.close()
 
-<<<<<<< HEAD
         file = open('c:\\Users\\vasaandja\\Desktop\\Nadica\\Nada-4\\sims-bp-2019-version5g1\metaData.txt', 'r')
-=======
-        file = open('c:\\Users\\Ica\\Desktop\\sims-i-baze-podataka\\RukovalacInformacionimResursima\\metaData.txt', 'r')
->>>>>>> 0ad26e78a436060765ff82a0b262c7fe62ea8cd6
 
         for line in file.readlines():
             data = line.strip().split('|')
@@ -49,22 +41,14 @@ class MetaModelHandler:
 
     def save(self):
 
-<<<<<<< HEAD
         file = open('c:\\Users\\vasaandja\\Desktop\\Nadica\\Nada-4\\sims-bp-2019-version5g1\metaModels.txt', 'w')
-=======
-        file = open('c:\\Users\\Ica\\Desktop\\sims-i-baze-podataka\\RukovalacInformacionimResursima\\metaModels.txt', 'w')
->>>>>>> 0ad26e78a436060765ff82a0b262c7fe62ea8cd6
 
         for model in self.metaModels:
             file.write(str(model.id) + '|' + model.name + '\n')
 
         file.close()
 
-<<<<<<< HEAD
         file = open('c:\\Users\\vasaandja\\Desktop\\Nadica\\Nada-4\\sims-bp-2019-version5g1\metaData.txt', 'w')
-=======
-        file = open('c:\\Users\\Ica\\Desktop\\sims-i-baze-podataka\\RukovalacInformacionimResursima\\metaData.txt', 'w')
->>>>>>> 0ad26e78a436060765ff82a0b262c7fe62ea8cd6
 
         for model in self.metaModels:
 

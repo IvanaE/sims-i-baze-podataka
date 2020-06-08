@@ -10,10 +10,7 @@ class ModelViewWidget(QWidget):
         super().__init__(parent)
 
         self.model = model
-<<<<<<< HEAD
         self.selectedData = None
-=======
->>>>>>> 0ad26e78a436060765ff82a0b262c7fe62ea8cd6
 
         self.main_layout = QVBoxLayout()
 
@@ -23,7 +20,6 @@ class ModelViewWidget(QWidget):
         self.tableModel = ModelTableModel(model)
         self.table.setModel(self.tableModel)
 
-<<<<<<< HEAD
         self.table.clicked.connect(self.select)
 
         self.addRowButton = QPushButton('Add')
@@ -35,13 +31,6 @@ class ModelViewWidget(QWidget):
         self.main_layout.addWidget(self.table)
         self.main_layout.addWidget(self.addRowButton)
         self.main_layout.addWidget(self.deleteRowButton)
-=======
-        self.addRowButton = QPushButton('Add')
-        self.addRowButton.clicked.connect(self.addRow)
-
-        self.main_layout.addWidget(self.table)
-        self.main_layout.addWidget(self.addRowButton)
->>>>>>> 0ad26e78a436060765ff82a0b262c7fe62ea8cd6
         self.setLayout(self.main_layout)
 
     def addRow(self):
@@ -54,7 +43,6 @@ class ModelViewWidget(QWidget):
         self.model.data.append(data)
         self.tableModel.layoutChanged.emit()
 
-<<<<<<< HEAD
     def select(self, index):
         self.selectedData = self.model.data[index.row()]
 
@@ -66,5 +54,3 @@ class ModelViewWidget(QWidget):
         self.model.data.remove(self.selectedData)
         self.tableModel.layoutChanged.emit()
         self.selectedData = None
-=======
->>>>>>> 0ad26e78a436060765ff82a0b262c7fe62ea8cd6

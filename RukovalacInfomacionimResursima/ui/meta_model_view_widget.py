@@ -35,7 +35,6 @@ class MetaModelViewWidget(QWidget):
     def addRow(self):
 
         self.metaModel.addMetaData()
-<<<<<<< HEAD
         self.model.layoutChanged.emit()
 
     def select(self, index):
@@ -49,6 +48,3 @@ class MetaModelViewWidget(QWidget):
         self.metaModel.metadata.remove(self.selectedMetaData)
         self.model.layoutChanged.emit()
         self.selectedMetaData = None
-=======
-        self.model.layoutChanged.emit()
->>>>>>> 0ad26e78a436060765ff82a0b262c7fe62ea8cd6
