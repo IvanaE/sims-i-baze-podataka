@@ -9,7 +9,7 @@ class MetaModelHandler:
 
         self.metaModels = []
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\Nada-3\\sims-bp-2019-version5g1-V4\\metaModels.txt', 'r')
+        file = open('c:\\Users\\Ica\\Desktop\\sims-i-baze-podataka\\RukovalacInformacionimResursima\\metaModels.txt', 'r')
 
         for line in file.readlines():
             data = line.strip().split('|')
@@ -21,7 +21,7 @@ class MetaModelHandler:
 
         file.close()
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\Nada-3\\sims-bp-2019-version5g1-V4\\metaData.txt', 'r')
+        file = open('c:\\Users\\Ica\\Desktop\\sims-i-baze-podataka\\RukovalacInformacionimResursima\\metaData.txt', 'r')
 
         for line in file.readlines():
             data = line.strip().split('|')
@@ -41,14 +41,14 @@ class MetaModelHandler:
 
     def save(self):
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\Nada-3\\sims-bp-2019-version5g1-V4\\metaModels.txt', 'w')
+        file = open('c:\\Users\\Ica\\Desktop\\sims-i-baze-podataka\\RukovalacInformacionimResursima\\metaModels.txt', 'w')
 
         for model in self.metaModels:
             file.write(model.id + '|' + model.name + '\n')
 
         file.close()
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\Nada-3\\sims-bp-2019-version5g1-V4\\metaData.txt', 'w')
+        file = open('c:\\Users\\Ica\\Desktop\\sims-i-baze-podataka\\RukovalacInformacionimResursima\\metaData.txt', 'w')
 
         for model in self.metaModels:
 

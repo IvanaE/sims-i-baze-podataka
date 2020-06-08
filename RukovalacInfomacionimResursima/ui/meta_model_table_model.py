@@ -67,5 +67,4 @@ class MetaModelTableModel(QAbstractTableModel):
         return False
 
     def flags(self, index):
-        return super().flags(index) | QtCore.Qt.ItemIsEditable  # ili nad bitovima
-
+        return super().flags(index) | QtCore.Qt.ItemIsEditable 
