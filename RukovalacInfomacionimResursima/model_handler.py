@@ -13,7 +13,7 @@ class ModelHandler:
 
     def save(self):
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\Nada-4\\sims-bp-2019-version5g1\models.txt', 'w')
+        file = open('c:\\Users\\vasaandja\\Desktop\\Nadica\\Nada-4\\sims-bp-2019-version5g1\models.txt', 'w')
 
         for model in self.models:
             print(model.metaModel)
@@ -26,7 +26,7 @@ class ModelHandler:
 
     def load(self):
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\Nada-4\\sims-bp-2019-version5g1\models.txt', 'r')
+        file = open('c:\\Users\\vasaandja\\Desktop\\Nadica\\Nada-4\\sims-bp-2019-version5g1\models.txt', 'r')
 
         for line in file.readlines():
             data = line.strip().split('|')
