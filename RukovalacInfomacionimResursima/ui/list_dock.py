@@ -2,7 +2,10 @@ from PySide2 import QtWidgets, QtGui, QtCore
 from PySide2.QtWidgets import QListWidget, QListView, QVBoxLayout, QWidget, QPushButton
 
 from data_source_type import DataSourceType
+<<<<<<< HEAD
 from ui.add_meta_model_form import AddMetaModelForm
+=======
+>>>>>>> 0ad26e78a436060765ff82a0b262c7fe62ea8cd6
 from ui.add_model_form import AddModelForm
 from ui.list_dock_meta_model import ListDockMetaModel
 from ui.list_dock_model import ListDockModel
@@ -49,10 +52,13 @@ class ListDock(QtWidgets.QDockWidget):
         self.addModelButton.clicked.connect(self.addModel)
         self.main_layout.addWidget(self.addModelButton)
 
+<<<<<<< HEAD
         self.deleteModelButton = QPushButton('Delete Model')
         self.deleteModelButton.clicked.connect(self.deleteModel)
         self.main_layout.addWidget(self.deleteModelButton)
 
+=======
+>>>>>>> 0ad26e78a436060765ff82a0b262c7fe62ea8cd6
         self.widget.setLayout(self.main_layout)
 
         self.setWidget(self.widget)
@@ -72,6 +78,7 @@ class ListDock(QtWidgets.QDockWidget):
         self.handleMetamodelClick(self.metaModelHandler.metaModels[item.row()])
 
     def itemClickModel(self, item):
+<<<<<<< HEAD
         self.selectedModel = self.modelHandler.models[item.row()]
         self.handleModelClick(self.modelHandler.models[item.row()])
 
@@ -93,28 +100,38 @@ class ListDock(QtWidgets.QDockWidget):
 
         self.listDockModel.layoutChanged.emit()
 
+=======
+        self.handleModelClick(self.modelHandler.models[item.row()])
+
+>>>>>>> 0ad26e78a436060765ff82a0b262c7fe62ea8cd6
     def addModel(self):
 
         self.form = AddModelForm(self.metaModelHandler, self.addModelOk)
         self.form.show()
 
+<<<<<<< HEAD
     def addMetaModel(self):
 
         self.metaModelForm = AddMetaModelForm(self.metaModelHandler, self.addMetaModelOk)
         self.metaModelForm.show()
 
+=======
+>>>>>>> 0ad26e78a436060765ff82a0b262c7fe62ea8cd6
     def addModelOk(self, name, source, sourceType, metaModel):
         self.modelHandler.addModel(name, source, self.getSourceTypeWithName(sourceType),
                                    self.getMetaModelWithName(metaModel))
         self.form.close()
         self.listDockModel.layoutChanged.emit()
 
+<<<<<<< HEAD
     def addMetaModelOk(self, name):
         self.metaModelHandler.addMetaModel(name)
 
         self.metaModelForm.close()
         self.listDockMetaModel.layoutChanged.emit()
 
+=======
+>>>>>>> 0ad26e78a436060765ff82a0b262c7fe62ea8cd6
     def getMetaModelWithName(self, name):
 
         for metaModel in self.metaModelHandler.metaModels:
