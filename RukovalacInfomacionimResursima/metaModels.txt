@@ -1,4 +1,7 @@
-1|test1
-2|test2
-3|student_model
-4|visokoskolska_ustanova_model
+1|Student|Student
+2|Ustanova|Ustanova
+3|Nivo Studija|Nivo Studija
+4|Nastavni Predmet|Nastavni Predmet
+5|Studijski Programi|Studijski Programi
+6|Tok Studija|Tok Studija
+7|Plan Studijske Grupe|Plan Studijske Grupe

@@ -1,67 +1,55 @@
-from data_handler import DataHandler
-import json
+from os import path
 import pickle
 
+from sekvencijalna.data_handler import DataHandler
+
+
 class SequentialFileHandler(DataHandler):
-    def __init__(self, filepath, meta_filepath):
+    def __init__(self, model):
         super().__init__()
-        self.filepath = filepath
-        self.meta_filepath = meta_filepath
+        self.model = model
         self.data = []
-        self.metadata = {}
-        self.load_data()
+        
+    def save(self):
+        with open(self.model.dataSource + '.Sequential', 'wb') as data_file:
+           pickle.dump(self.model.data, data_file) 
     
     def load_data(self):
-        #učitavanje podataka
-        with open((self.filepath), 'rb') as dfile:
-            self.data = pickle.load(dfile) #koristimo pickle za deserijalizaciju podataka
 
-        #učitavanje metapodataka
-        with open(self.meta_filepath) as meta_file:
-            self.metadata = json.load(meta_file)  
+        if path.exists(self.model.dataSource + '.Sequential') == False:
+            return
 
-    def binary_search(self, id, start, end):
-        
-        while start <= end: 
-  
-            mid = start + (end - start)//2; 
-          
-        # Check if x is present at mid 
-            if getattr(self.data[mid], (self.metadata["key"])) == id: 
-                return mid 
-  
-        # If x is greater, ignore left half 
-            elif getattr(self.data[mid], (self.metadata["key"])) < id: 
-                start = mid + 1
-  
-        # If x is smaller, ignore right half 
-            else:
-                end = mid - 1
-
-        return None #nismo pronasli
-
+        with open((self.model.dataSource + '.Sequential'), 'rb') as dfile:
+            self.data = pickle.load(dfile)
 
     def get_one(self, id):
-        #TODO sta ako vrati None?
-        return self.data[self.binary_search(id, 0, (len(self.data)))]
-
-    def find_location_for_insert(self, obj):
-        #TODO alternativni način dobavljanja? (binarna pretraga)
-        for i in range(len(self.data)):
-            if getattr(self.data[i], (self.metadata["key"])) > getattr(obj, (self.metadata["key"])):
-                return i
+        for d in self.data:
+            if getattr(d, (self.metadata["key"])) == id:
+                return d
         return None
 
-    def insert(self, obj):
-        #TODO proveriti da li podatak postoji vec u datoteci
-        #trazimo indeks koji je poslednji manji od naseg
-        location = self.find_location_for_insert(obj)
-        if(location == None):
-            self.data.append(obj)
-        else:
-            self.data.insert(location-1, obj)
+    def get_all(self):
+        return self.data
 
-        
-        
+    def insert(self, obj):
+        self.data.append(obj)
+        with open(self.filepath, 'wb') as f:
+            pickle.dump(self.data, f)
+
+    def edit(self, obj):
+        keyValue = obj[self.model.metaModel.key]
+        oldObj = self.get_one(keyValue)
+        index = self.data.index(oldObj)
+        self.data[index] = obj
+
+    def insertList(self, list):
+
+        for item in list:
+            self.insert(item)
+
+    def delete(self, obj):
+        keyValue = obj[self.model.metaModel.key]
+        oldObj = self.get_one(keyValue)
+        self.data.remove(oldObj)    
 
     

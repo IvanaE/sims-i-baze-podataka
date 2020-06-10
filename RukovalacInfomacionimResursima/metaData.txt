@@ -1,7 +1,42 @@
-vgsdhfgksd|count|int|0|1
-Ana Savic|student|redovni|2019111|1
-Ivan Ilic|Profesor|FTN|12|1
-Olja Maric|Asistent|stalni|0|1
-firstName|first name|string|0|2
-lastName|last name|string|0|2
-name|Column Name|string|0|2
+brojIndeksa|Broj Indeksa|string|0|1
+prezime|Prezime|string|1|1
+imeRoditelja|Ime Roditelja|string|2|1
+ime|Ime|string|3|1
+pol|Pol|string|4|1
+adresa|Adresa Stanovanja|string|5|1
+telefon|Telefon|string|6|1
+jmbg|JMBG|string|7|1
+datumRodjenja|Datum Rodjenja|string|8|1
+ustanova|Ustanova|Ustanova|9|1
+oznaka|Oznaka|string|0|2
+naziv|Naziv|string|1|2
+adresa|Adresa|string|2|2
+oznaka|Oznaka|string|0|3
+naziv|Naziv|string|1|3
+oznaka|Oznaka|string|0|4
+naziv|Naziv|string|1|4
+espb|ESPB|int|2|4
+ustanova|Ustanova|Ustanova|3|4
+oznaka|Oznaka|string|0|5
+ustanova|Ustanova|Ustanova|1|5
+nivo|Nivo|int|2|5
+naziv|Naziv|string|3|5
+id|ID|string|0|6
+ustanova|Ustanova|Ustanova|1|6
+oznaka|Oznaka programa|Studijski Programi|2|6
+brojIndeksa|Broj Indeksa|Student|3|6
+struka|Struka|string|4|6
+skolskaGodina|Skolska Godina|int|5|6
+godinaStudija|Godina Studija|int|6|6
+blok|Blok|int|7|6
+redniBrojUpisa|Redni Broj Upias|int|8|6
+datumUpisa|Datum Upisa|string|9|6
+datumOvere|Datum Overe|string|10|6
+espbPocetni|ESPB Pocetni|int|11|6
+espbKrajni|ESPB Krajnji|int|12|6
+id|ID|int|0|7
+programUstanove|Program Ustanove|Studijski Programi|1|7
+oznakaPrograma|Oznaka Programa|string|2|7
+blok|Blok|int|3|7
+pozicija|Pozicija|int|4|7
+oznakaPredmeta|Oznaka Predmeta|Nastavni Predmet|5|7

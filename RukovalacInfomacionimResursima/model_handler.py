@@ -1,5 +1,7 @@
 from data_source_type import DataSourceType
 from model import Model
+from sekvencijalna.sequential_file_handler import SequentialFileHandler
+from serijska.serial_file_handler import SerialFileHandler
 
 
 class ModelHandler:
@@ -22,7 +24,13 @@ class ModelHandler:
 
         file.close()
 
-
+        for model in self.models:
+            if model.dataSourceType == DataSourceType.SERIAL:
+                handler = SerialFileHandler(model)
+                handler.save()
+            elif model.dataSourceType == DataSourceType.SEQ:
+                handler = SequentialFileHandler(model)
+                handler.save()
 
     def load(self):
 
@@ -39,6 +47,17 @@ class ModelHandler:
                                      self.getDataSourceType(data[2]), data[1]))
 
         file.close()
+
+        for model in self.models:
+            print(model)
+            if model.dataSourceType == DataSourceType.SERIAL:
+                handler = SerialFileHandler(model)
+                handler.load_data()
+                model.data = handler.get_all()
+            elif model.dataSourceType == DataSourceType.SEQ:
+                handler = SequentialFileHandler(model)
+                handler.load_data()
+                model.data = handler.get_all()
 
     def getDataSourceType(self, type):
 
