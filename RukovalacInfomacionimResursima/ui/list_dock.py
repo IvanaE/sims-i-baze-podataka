@@ -130,4 +130,4 @@ class ListDock(QtWidgets.QDockWidget):
         if name == 'Sequential':
             return DataSourceType.SEQ
 
-        return DataSourceType.MYSQL  
+        return DataSourceType.MYSQL
