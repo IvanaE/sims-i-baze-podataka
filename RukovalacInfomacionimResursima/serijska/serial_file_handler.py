@@ -1,5 +1,5 @@
 from os import path
-import pickle #koristimo pickle za serijalizaciju i deserijalizaciju objekata
+import pickle
 
 from serijska.data_handler import DataHandler
 
@@ -8,14 +8,14 @@ class SerialFileHandler(DataHandler):
         super().__init__()
         self.model = model
         self.data = []
-        
+
     def save(self):
         with open(self.model.dataSource + '.Serial', 'wb') as data_file:
             pickle.dump(self.model.data, data_file)
-    
 
+    
     def load_data(self):
-   
+
         if path.exists(self.model.dataSource + '.Serial') == False:
             return
 
@@ -52,6 +52,7 @@ class SerialFileHandler(DataHandler):
         oldObj = self.get_one(keyValue)
         self.data.remove(oldObj)
     
+
 
 
     

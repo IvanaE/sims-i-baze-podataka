@@ -9,11 +9,11 @@ class SequentialFileHandler(DataHandler):
         super().__init__()
         self.model = model
         self.data = []
-        
+
     def save(self):
         with open(self.model.dataSource + '.Sequential', 'wb') as data_file:
-           pickle.dump(self.model.data, data_file) 
-    
+            pickle.dump(self.model.data, data_file)
+
     def load_data(self):
 
         if path.exists(self.model.dataSource + '.Sequential') == False:
@@ -50,6 +50,5 @@ class SequentialFileHandler(DataHandler):
     def delete(self, obj):
         keyValue = obj[self.model.metaModel.key]
         oldObj = self.get_one(keyValue)
-        self.data.remove(oldObj)    
-
-    
+        self.data.remove(oldObj)
+        

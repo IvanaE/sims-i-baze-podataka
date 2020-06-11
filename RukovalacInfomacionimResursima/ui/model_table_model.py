@@ -19,8 +19,9 @@ class ModelTableModel(QAbstractTableModel):
 
     def data(self, index, role=QtCore.Qt.DisplayRole):
         model = self.get_element(index)
+        key = self.model.metaModel.metadata[index.column()].name
         if role == QtCore.Qt.DisplayRole:
-            return model[index.column()]
+            return model[key]
         return None
 
     def headerData(self, section, orientation, role=QtCore.Qt.DisplayRole):
@@ -30,10 +31,11 @@ class ModelTableModel(QAbstractTableModel):
 
     def setData(self, index, value, role=QtCore.Qt.EditRole):
         model = self.get_element(index)
+        key = self.model.metaModel.metadata[index.column()].name
         if value == "":
             return False
         if role == QtCore.Qt.EditRole:
-            model[index.column()] = value
+            model[key] = value
             return True
         return False
 

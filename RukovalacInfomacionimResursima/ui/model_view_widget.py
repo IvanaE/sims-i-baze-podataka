@@ -35,10 +35,10 @@ class ModelViewWidget(QWidget):
 
     def addRow(self):
 
-        data = []
+        data = {}
 
         for item in self.model.metaModel.metadata:
-            data.append('')
+            data[item.name] = ''
 
         self.model.data.append(data)
         self.tableModel.layoutChanged.emit()

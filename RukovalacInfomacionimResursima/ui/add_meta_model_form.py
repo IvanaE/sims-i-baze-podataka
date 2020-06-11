@@ -11,11 +11,13 @@ class AddMetaModelForm(QDialog):
 
         # Create widgets
         self.name = QLineEdit("Name")
+        self.key = QLineEdit("Key")
         self.button = QPushButton("ok")
 
         # Create layout and add widgets
         layout = QVBoxLayout()
         layout.addWidget(self.name)
+        layout.addWidget(self.key)
 
         layout.addWidget(self.button)
         # Set dialog layout
@@ -24,4 +26,4 @@ class AddMetaModelForm(QDialog):
         self.button.clicked.connect(self.ok)
 
     def ok(self):
-        self.addMetaModelOk(self.name.text())
+        self.addMetaModelOk(self.name.text(), self.key.text())

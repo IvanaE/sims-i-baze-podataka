@@ -1,14 +1,7 @@
-Student_SERIAL|student|DataSourceType.SERIAL|1
-Ustanova_SERIAL|ustanova|DataSourceType.SERIAL|2
-Nivo Studija_SERIAL|nivo_studija|DataSourceType.SERIAL|3
-Nastavni Predmet_SERIAL|nastavni_predmet|DataSourceType.SERIAL|4
-Studijski Programi_SERIAL|studijski_programi|DataSourceType.SERIAL|5
-Tok Studija_SERIAL|tok_studija|DataSourceType.SERIAL|6
-Plan Studijske Grupe_SERIAL|plan_studijske_grupe|DataSourceType.SERIAL|7
-Student_SEQ|student|DataSourceType.SEQ|1
-Ustanova_SEQ|ustanova|DataSourceType.SEQ|2
-Nivo Studija_SEQ|nivo_studija|DataSourceType.SEQ|3
-Nastavni Predmet_SEQ|nastavni_predmet|DataSourceType.SEQ|4
-Studijski Programi_SEQ|studijski_programi|DataSourceType.SEQ|5
-Tok Studija_SEQ|tok_studija_SEQ|DataSourceType.SEQ|6
-Plan Studijske Grupe_SEQ|plan_studijske_grupe|DataSourceType.SEQ|7
+Student|student|DataSourceType.SERIAL|1
+Ustanova|ustanova|DataSourceType.SERIAL|2
+Nivo Studija|nivo_studija|DataSourceType.SERIAL|3
+Nastavni Predmet|nastavni_predmet|DataSourceType.SERIAL|4
+Studijski Programi|studijski_programi|DataSourceType.SERIAL|5
+Tok Studija|tok_studija|DataSourceType.SERIAL|6
+Plan Studijske Grupe|plan_studijske_grupe|DataSourceType.SERIAL|7

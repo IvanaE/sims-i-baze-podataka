@@ -9,7 +9,7 @@ class MetaModelHandler:
 
         self.metaModels = []
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\Nadica\\Nada-4\\sims-bp-2019-version5g1\metaModels.txt', 'r')
+        file = open('c:\\Users\\vasaandja\\Desktop\\N-7\\sims-bp-2019-version5g1-V7\metaModels.txt', 'r')
 
         for line in file.readlines():
             data = line.strip().split('|')
@@ -17,11 +17,11 @@ class MetaModelHandler:
             if len(data) == 0:
                 break
 
-            self.metaModels.append(MetaModel(data[0], data[1], []))
+            self.metaModels.append(MetaModel(data[0], data[1], data[1], []))
 
         file.close()
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\Nadica\\Nada-4\\sims-bp-2019-version5g1\metaData.txt', 'r')
+        file = open('c:\\Users\\vasaandja\\Desktop\\N-7\\sims-bp-2019-version5g1-V7\metaData.txt', 'r')
 
         for line in file.readlines():
             data = line.strip().split('|')
@@ -41,14 +41,14 @@ class MetaModelHandler:
 
     def save(self):
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\Nadica\\Nada-4\\sims-bp-2019-version5g1\metaModels.txt', 'w')
+        file = open('c:\\Users\\vasaandja\\Desktop\\N-7\\sims-bp-2019-version5g1-V7\metaModels.txt', 'w')
 
         for model in self.metaModels:
-            file.write(str(model.id) + '|' + model.name + '\n')
+            file.write(str(model.id) + '|' + model.name + '|' + model.key + '\n')
 
         file.close()
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\Nadica\\Nada-4\\sims-bp-2019-version5g1\metaData.txt', 'w')
+        file = open('c:\\Users\\vasaandja\\Desktop\\N-7\\sims-bp-2019-version5g1-V7\metaData.txt', 'w')
 
         for model in self.metaModels:
 
@@ -78,9 +78,9 @@ class MetaModelHandler:
 
         return self.id + 1
 
-    def addMetaModel(self, name):
+    def addMetaModel(self, name, key):
 
-        self.metaModels.append(MetaModel(self.generateId(), name, []))
+        self.metaModels.append(MetaModel(self.generateId(), name, key, []))
 
     def delete(self, metaModel):
 

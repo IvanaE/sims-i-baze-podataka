@@ -109,8 +109,8 @@ class ListDock(QtWidgets.QDockWidget):
         self.form.close()
         self.listDockModel.layoutChanged.emit()
 
-    def addMetaModelOk(self, name):
-        self.metaModelHandler.addMetaModel(name)
+    def addMetaModelOk(self, name, key):
+        self.metaModelHandler.addMetaModel(name, key)
 
         self.metaModelForm.close()
         self.listDockMetaModel.layoutChanged.emit()
@@ -130,4 +130,4 @@ class ListDock(QtWidgets.QDockWidget):
         if name == 'Sequential':
             return DataSourceType.SEQ
 
-        return DataSourceType.MYSQL
+        return DataSourceType.MYSQL  
