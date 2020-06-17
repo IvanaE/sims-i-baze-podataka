@@ -1,6 +1,8 @@
 from os import path
 import pickle
 
+from PySide2.QtCore import QDir
+
 from serijska.data_handler import DataHandler
 
 class SerialFileHandler(DataHandler):
@@ -10,16 +12,16 @@ class SerialFileHandler(DataHandler):
         self.data = []
 
     def save(self):
-        with open(self.model.dataSource + '.Serial', 'wb') as data_file:
+        with open(QDir.currentPath() + '/data/' + self.model.dataSource + '.Serial', 'wb') as data_file:
             pickle.dump(self.model.data, data_file)
 
     
     def load_data(self):
 
-        if path.exists(self.model.dataSource + '.Serial') == False:
+        if path.exists(QDir.currentPath() + '/data/' + self.model.dataSource + '.Serial') == False:
             return
 
-        with open((self.model.dataSource + '.Serial'), 'rb') as dfile:
+        with open((QDir.currentPath() + '/data/' + self.model.dataSource + '.Serial'), 'rb') as dfile:
             self.data = pickle.load(dfile)
 
     def get_one(self, id):

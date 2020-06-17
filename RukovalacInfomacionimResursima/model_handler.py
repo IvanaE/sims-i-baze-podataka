@@ -1,3 +1,5 @@
+from PySide2.QtCore import QDir
+
 from data_source_type import DataSourceType
 from model import Model
 from sekvencijalna.sequential_file_handler import SequentialFileHandler
@@ -15,7 +17,7 @@ class ModelHandler:
 
     def save(self):
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\N-7\\sims-bp-2019-version5g1-V7\models.txt', 'w')
+        file = open(QDir.currentPath() + '/models.txt', 'w')
 
         for model in self.models:
             print(model.metaModel)
@@ -34,7 +36,7 @@ class ModelHandler:
 
     def load(self):
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\N-7\\sims-bp-2019-version5g1-V7\models.txt', 'r')
+        file = open(QDir.currentPath() + '/models.txt', 'r')
 
         for line in file.readlines():
             data = line.strip().split('|')
@@ -71,3 +73,12 @@ class ModelHandler:
     def delete(self, model):
 
         self.models.remove(model)
+
+    def getModelFromFile(self, fileName, type):
+
+        for model in self.models:
+
+            if model.dataSource == fileName and type == model.dataSourceType:
+                return model
+
+        return None

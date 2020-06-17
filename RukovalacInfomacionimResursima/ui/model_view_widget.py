@@ -1,7 +1,6 @@
 from PySide2 import QtWidgets
 from PySide2.QtWidgets import QWidget, QTabWidget, QVBoxLayout, QPushButton
 
-from ui.meta_model_table_model import MetaModelTableModel
 from ui.model_table_model import ModelTableModel
 
 

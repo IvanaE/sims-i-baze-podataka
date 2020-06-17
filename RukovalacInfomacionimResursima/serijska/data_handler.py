@@ -1,4 +1,4 @@
-class DataHandler():
+class DataHandler:
 
     def __init__(self):
         super().__init__()

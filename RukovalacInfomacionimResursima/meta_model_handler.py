@@ -1,3 +1,5 @@
+from PySide2.QtCore import QDir
+
 from meta_data import MetaData
 from meta_model import MetaModel
 
@@ -9,7 +11,7 @@ class MetaModelHandler:
 
         self.metaModels = []
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\N-7\\sims-bp-2019-version5g1-V7\metaModels.txt', 'r')
+        file = open(QDir.currentPath() + '/metaModels.txt', 'r')
 
         for line in file.readlines():
             data = line.strip().split('|')
@@ -21,7 +23,7 @@ class MetaModelHandler:
 
         file.close()
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\N-7\\sims-bp-2019-version5g1-V7\metaData.txt', 'r')
+        file = open(QDir.currentPath() + '/metaData.txt', 'r')
 
         for line in file.readlines():
             data = line.strip().split('|')
@@ -41,14 +43,14 @@ class MetaModelHandler:
 
     def save(self):
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\N-7\\sims-bp-2019-version5g1-V7\metaModels.txt', 'w')
+        file = open(QDir.currentPath() + '/metaModels.txt', 'w')
 
         for model in self.metaModels:
             file.write(str(model.id) + '|' + model.name + '|' + model.key + '\n')
 
         file.close()
 
-        file = open('c:\\Users\\vasaandja\\Desktop\\N-7\\sims-bp-2019-version5g1-V7\metaData.txt', 'w')
+        file = open(QDir.currentPath() + '/metaData.txt', 'w')
 
         for model in self.metaModels:
 
