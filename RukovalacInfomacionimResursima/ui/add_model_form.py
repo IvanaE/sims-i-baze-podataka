@@ -24,7 +24,6 @@ class AddModelForm(QDialog):
 
         if self.metaModelHandler is not None:
             for metaModel in self.metaModelHandler.metaModels:
-                print(metaModel.name)
                 self.metaModelCB.addItem(metaModel.name)
 
         # Create layout and add widgets

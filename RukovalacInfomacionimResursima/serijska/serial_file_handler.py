@@ -9,24 +9,28 @@ class SerialFileHandler(DataHandler):
     def __init__(self, model):
         super().__init__()
         self.model = model
+        self.key = self.model.metaModel.key
         self.data = []
 
+    def getPath(self):
+        return QDir.currentPath() + '/data/' + self.model.dataSource + '.Serial'
+
     def save(self):
-        with open(QDir.currentPath() + '/data/' + self.model.dataSource + '.Serial', 'wb') as data_file:
+        with open(self.getPath(), 'wb') as data_file:
             pickle.dump(self.model.data, data_file)
 
     
     def load_data(self):
 
-        if path.exists(QDir.currentPath() + '/data/' + self.model.dataSource + '.Serial') == False:
+        if path.exists(self.getPath()) == False:
             return
 
-        with open((QDir.currentPath() + '/data/' + self.model.dataSource + '.Serial'), 'rb') as dfile:
+        with open(self.getPath(), 'rb') as dfile:
             self.data = pickle.load(dfile)
 
     def get_one(self, id):
         for d in self.data:
-            if getattr(d, (self.metadata["key"])) == id:
+            if getattr(d, (self.key)) == id:
                 return d
         return None
 
@@ -35,25 +39,24 @@ class SerialFileHandler(DataHandler):
 
     def insert(self, obj):
         self.data.append(obj)
-        with open(self.filepath, 'wb') as f:
+        with open(self.getPath(), 'wb') as f:
             pickle.dump(self.data, f)
 
     def edit(self, obj):
-        keyValue = obj[self.model.metaModel.key]
+        keyValue = obj[self.key]
         oldObj = self.get_one(keyValue)
         index = self.data.index(oldObj)
         self.data[index] = obj
 
-    def insertList(self, list):
+    def insert_many(self, list):
 
         for item in list:
             self.insert(item)
 
-    def delete(self, obj):
-        keyValue = obj[self.model.metaModel.key]
+    def delete_one(self, obj):
+        keyValue = obj[self.key]
         oldObj = self.get_one(keyValue)
         self.data.remove(oldObj)
-    
 
 
 

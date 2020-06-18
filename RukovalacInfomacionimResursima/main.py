@@ -1,7 +1,6 @@
 import sys
 from PySide2 import QtWidgets, QtGui, QtCore
-from PySide2.QtWidgets import QGridLayout, QToolBar, QToolButton, QPlainTextEdit, QAction, QListWidget, QVBoxLayout, \
-    QDockWidget, QTabWidget, QMenu, QMenuBar
+from PySide2.QtWidgets import QToolBar, QToolButton, QTabWidget, QWidget, QVBoxLayout, QMenuBar, QMenu
 
 from meta_model_handler import MetaModelHandler
 from model_handler import ModelHandler
@@ -25,11 +24,30 @@ def save():
     modelHandler.save()
 
 def handleModelClick(model):
-    modelWidget = ModelViewWidget(central_widget, model)
-    central_widget.addTab(modelWidget, QtGui.QIcon("icons8-edit-file-64.png"), model.name + ' - Model')
+    modelWidget = ModelViewWidget(mainTabWidget, model)
+    mainTabWidget.addTab(modelWidget, QtGui.QIcon("icons8-edit-file-64.png"), model.name + ' - Model')
 
-def delete_tab(index):
-    central_widget.removeTab(index)
+    for metaData in model.metaModel.metadata:
+
+        if metaData.type == 'string' or metaData.type == 'int' or metaData.type == 'double':
+            continue
+
+        connectedModel = modelHandler.getModelWithName(metaData.type)
+
+        if connectedModel == None:
+            continue
+
+        connectedModelWidget = ModelViewWidget(connectedTabWidget, connectedModel)
+        connectedTabWidget.addTab(connectedModelWidget, QtGui.QIcon("icons8-edit-file-64.png"),
+                                  connectedModel.name + ' - Model')
+
+
+
+def delete_tab_main(index):
+    mainTabWidget.removeTab(index)
+
+def delete_tab_connected(index):
+    connectedTabWidget.removeTab(index)
 
 def login():
     loginForm.close()
@@ -44,35 +62,41 @@ main_window.setWindowIcon(QtGui.QIcon("icons8-edit-file-64.png"))
 metaModelHandler.load()
 toolBar = QToolBar()
 
-
-toolLoadButton = QToolButton()
-toolLoadButton.setText('Load')
-toolLoadButton.clicked.connect(load)
-toolBar.addWidget(toolLoadButton)
-
-toolSaveButton = QToolButton()
-toolSaveButton.setText('Save')
-toolSaveButton.clicked.connect(save)
-toolBar.addWidget(toolSaveButton)
-
 toolExitButton = QToolButton()
-toolExitButton.setText('Exit')
+toolExitButton.setIcon(QtGui.QIcon("icons8-exit-96.png"))
 toolExitButton.clicked.connect(exit)
 toolBar.addWidget(toolExitButton)
 main_window.addToolBar(toolBar)
 
-#metamodel list
-
-listDock = ListDock('Meta Model list', main_window, handleModelClick)
+listDock = ListDock('Data', main_window, handleModelClick)
 main_window.addDockWidget(QtCore.Qt.LeftDockWidgetArea, listDock)
 
-#central widget
+mainTabWidget = QTabWidget(main_window)
+mainTabWidget.setTabsClosable(True)
+mainTabWidget.tabCloseRequested.connect(delete_tab_main)
 
-central_widget = QTabWidget(main_window)
-central_widget.setTabsClosable(True)
-central_widget.tabCloseRequested.connect(delete_tab)
+connectedTabWidget = QTabWidget(main_window)
+connectedTabWidget.setTabsClosable(True)
+connectedTabWidget.tabCloseRequested.connect(delete_tab_connected)
+
+main_layout = QVBoxLayout()
+
+main_layout.addWidget(mainTabWidget)
+main_layout.addWidget(connectedTabWidget)
+
+central_widget = QWidget()
+central_widget.setLayout(main_layout)
+
 main_window.showMaximized()
 main_window.setCentralWidget(central_widget)
+
+menuBar = main_window.menuBar()
+menuBar.addMenu(QMenu('File'))
+menuBar.addMenu(QMenu('View'))
+menuBar.addMenu(QMenu('Edit'))
+menuBar.addMenu(QMenu('Help'))
+
+main_window.menuBar()
 
 #loginForm.show()
 #loginForm.exec_()

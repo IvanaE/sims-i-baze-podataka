@@ -20,7 +20,6 @@ class ModelHandler:
         file = open(QDir.currentPath() + '/models.txt', 'w')
 
         for model in self.models:
-            print(model.metaModel)
             file.write(model.name + '|' + model.dataSource + '|' + str(model.dataSourceType)
                        + '|' + str(model.metaModel.id) + '\n')
 
@@ -51,7 +50,6 @@ class ModelHandler:
         file.close()
 
         for model in self.models:
-            print(model)
             if model.dataSourceType == DataSourceType.SERIAL:
                 handler = SerialFileHandler(model)
                 handler.load_data()
@@ -79,6 +77,15 @@ class ModelHandler:
         for model in self.models:
 
             if model.dataSource == fileName and type == model.dataSourceType:
+                return model
+
+        return None
+
+    def getModelWithName(self, name):
+
+        for model in self.models:
+
+            if model.name == name:
                 return model
 
         return None

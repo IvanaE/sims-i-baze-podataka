@@ -1,4 +1,4 @@
-from PySide2 import QtWidgets
+from PySide2 import QtWidgets, QtGui
 from PySide2.QtWidgets import QWidget, QTabWidget, QVBoxLayout, QPushButton
 
 from ui.model_table_model import ModelTableModel
@@ -22,9 +22,11 @@ class ModelViewWidget(QWidget):
         self.table.clicked.connect(self.select)
 
         self.addRowButton = QPushButton('Add')
+        self.addRowButton.setIcon(QtGui.QIcon('icons8-add-image-96.png'))
         self.addRowButton.clicked.connect(self.addRow)
 
         self.deleteRowButton = QPushButton('Delete')
+        self.deleteRowButton.setIcon(QtGui.QIcon('icons8-delete-96.png'))
         self.deleteRowButton.clicked.connect(self.delete)
 
         self.main_layout.addWidget(self.table)

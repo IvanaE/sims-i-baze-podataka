@@ -1,8 +1,8 @@
 import os
 
-from PySide2 import QtWidgets, QtGui, QtCore
+from PySide2 import QtWidgets, QtGui
 from PySide2.QtCore import QDir
-from PySide2.QtWidgets import QListWidget, QListView, QVBoxLayout, QWidget, QPushButton, QFileSystemModel, QTreeView
+from PySide2.QtWidgets import QVBoxLayout, QWidget, QPushButton, QFileSystemModel, QTreeView
 
 from data_source_type import DataSourceType
 from ui.add_model_form import AddModelForm
@@ -33,10 +33,12 @@ class ListDock(QtWidgets.QDockWidget):
         self.main_layout.addWidget(self.tree_view)
 
         self.addModelButton = QPushButton('Add Model')
+        self.addModelButton.setIcon(QtGui.QIcon('icons8-add-image-96.png'))
         self.addModelButton.clicked.connect(self.addModel)
         self.main_layout.addWidget(self.addModelButton)
 
         self.deleteModelButton = QPushButton('Delete Model')
+        self.deleteModelButton.setIcon(QtGui.QIcon('icons8-delete-96.png'))
         self.deleteModelButton.clicked.connect(self.deleteModel)
         self.main_layout.addWidget(self.deleteModelButton)
 
@@ -77,7 +79,7 @@ class ListDock(QtWidgets.QDockWidget):
             self.file_system_model.filePath(index))
 
         [name, type] = file_clicked_param.split('.')
-        print(type)
+
 
         model = self.modelHandler.getModelFromFile(name, self.getSourceTypeWithName(type))
 
@@ -95,7 +97,7 @@ class ListDock(QtWidgets.QDockWidget):
 
         if name == 'Serial':
             return DataSourceType.SERIAL
-        if name == 'Sequential':
+        if name == 'Seq':
             return DataSourceType.SEQ
 
         return DataSourceType.MYSQL

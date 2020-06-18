@@ -5,54 +5,93 @@ from PySide2.QtCore import QDir
 
 from sekvencijalna.data_handler import DataHandler
 
-
 class SequentialFileHandler(DataHandler):
     def __init__(self, model):
         super().__init__()
         self.model = model
         self.data = []
+        self.key = self.model.metaModel.key
 
-    def save(self):
-        with open(QDir.currentPath() + '/data/' + self.model.dataSource + '.Sequential', 'wb') as data_file:
-            pickle.dump(self.model.data, data_file)
-
-    def load_data(self):
-
-        if path.exists(QDir.currentPath() + '/data/' + self.model.dataSource + '.Sequential') == False:
-            return
-
-        with open((QDir.currentPath() + '/data/' + self.model.dataSource + '.Sequential'), 'rb') as dfile:
-            self.data = pickle.load(dfile)
-
-    def get_one(self, id):
-        for d in self.data:
-            if getattr(d, (self.metadata["key"])) == id:
-                return d
-        return None
+    def getPath(self):
+        return QDir.currentPath() + '/data/' + self.model.dataSource + '.Seq'
 
     def get_all(self):
         return self.data
 
+    def save(self):
+        with open(self.getPath(), 'wb') as data_file:
+            pickle.dump(self.model.data, data_file)
+
+    def load_data(self):
+
+        if path.exists(self.getPath()) == False:
+            return
+
+        with open(self.getPath(), 'rb') as dfile:
+            self.data = pickle.load(dfile)
+
+    def binary_search(self, id, start, end):
+
+        while start <= end:
+
+            mid = start + (end - start) // 2
+
+            # Check if x is present at mid
+            if getattr(self.data[mid], (self.key)) == id:
+                return mid
+
+                # If x is greater, ignore left half
+            elif getattr(self.data[mid], (self.key)) < id:
+                start = mid + 1
+
+            # If x is smaller, ignore right half
+            else:
+                end = mid - 1
+
+        return None  # nismo pronasli
+
+    def get_one(self, id):
+        index = self.binary_search(id, 0, (len(self.data)))
+
+        if index == None:
+            return None
+
+        return self.data[index]
+
+    def find_location_for_insert(self, obj):
+
+        for i in range(len(self.data)):
+            if getattr(self.data[i], (self.key)) > getattr(obj, (self.metadata["key"])):
+                return i
+        return None
+
     def insert(self, obj):
-        self.data.append(obj)
-        with open(self.filepath, 'wb') as f:
-            pickle.dump(self.data, f)
+
+        index = self.binary_search(obj[self.key], 0, (len(self.data)))
+
+        if index != None:
+            return
+
+        location = self.find_location_for_insert(obj)
+        if (location == None):
+            self.data.append(obj)
+        else:
+            self.data.insert(location - 1, obj)
 
     def edit(self, obj):
-        keyValue = obj[self.model.metaModel.key]
-        oldObj = self.get_one(keyValue)
-        index = self.data.index(oldObj)
+        index = self.binary_search(id, 0, (len(self.data)))
+
+        if index == None:
+            return None
+
         self.data[index] = obj
 
-    def insertList(self, list):
+    def delete_one(self, obj):
+        keyValue = obj[self.key]
+        oldObj = self.get_one(keyValue)
+        self.data.remove(oldObj)
+
+    def insert_many(self, list):
 
         for item in list:
             self.insert(item)
-
-    def delete(self, obj):
-        keyValue = obj[self.model.metaModel.key]
-        oldObj = self.get_one(keyValue)
-        self.data.remove(oldObj)
-        
-
-    

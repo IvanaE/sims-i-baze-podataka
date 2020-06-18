@@ -5,3 +5,4 @@ Nastavni Predmet|nastavni_predmet|DataSourceType.SERIAL|4
 Studijski Programi|studijski_programi|DataSourceType.SERIAL|5
 Tok Studija|tok_studija|DataSourceType.SERIAL|6
 Plan Studijske Grupe|plan_studijske_grupe|DataSourceType.SERIAL|7
+Student|student|DataSourceType.SEQ|1
