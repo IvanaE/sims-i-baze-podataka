@@ -7,9 +7,12 @@ from model_handler import ModelHandler
 from ui.list_dock import ListDock
 from ui.login_form import LoginForm
 from ui.model_view_widget import ModelViewWidget
+from ui.user_widget import UserWidget
+from user_handler import UserHandler
 
 metaModelHandler = MetaModelHandler()
 modelHandler = ModelHandler(metaModelHandler)
+userHandler = UserHandler()
 
 def exit():
     app.closeAllWindows()
@@ -49,12 +52,16 @@ def delete_tab_main(index):
 def delete_tab_connected(index):
     connectedTabWidget.removeTab(index)
 
-def login():
+def login(logedUser):
+    userHandler.user = logedUser
     loginForm.close()
 
+def userClick():
+    userWidget = UserWidget(mainTabWidget, userHandler)
+    mainTabWidget.addTab(userWidget, QtGui.QIcon("icons8-edit-file-64.png"), 'Users')
 
 app = QtWidgets.QApplication(sys.argv)
-loginForm = LoginForm(login)
+loginForm = LoginForm(login, userHandler)
 main_window = QtWidgets.QMainWindow()
 main_window.resize(840, 680)
 main_window.setWindowTitle("InfHandler")
@@ -62,11 +69,6 @@ main_window.setWindowIcon(QtGui.QIcon("icons8-edit-file-64.png"))
 metaModelHandler.load()
 toolBar = QToolBar()
 
-toolExitButton = QToolButton()
-toolExitButton.setIcon(QtGui.QIcon("icons8-exit-96.png"))
-toolExitButton.clicked.connect(exit)
-toolBar.addWidget(toolExitButton)
-main_window.addToolBar(toolBar)
 
 listDock = ListDock('Data', main_window, handleModelClick)
 main_window.addDockWidget(QtCore.Qt.LeftDockWidgetArea, listDock)
@@ -87,7 +89,6 @@ main_layout.addWidget(connectedTabWidget)
 central_widget = QWidget()
 central_widget.setLayout(main_layout)
 
-main_window.showMaximized()
 main_window.setCentralWidget(central_widget)
 
 menuBar = main_window.menuBar()
@@ -98,14 +99,30 @@ menuBar.addMenu(QMenu('Help'))
 
 main_window.menuBar()
 
-#loginForm.show()
-#loginForm.exec_()
+loginForm.show()
+loginForm.exec_()
 
 load()
 
+
+toolExitButton = QToolButton()
+toolExitButton.setIcon(QtGui.QIcon("icons8-exit-96.png"))
+toolExitButton.clicked.connect(exit)
+toolBar.addWidget(toolExitButton)
+
+if userHandler.user.type == 'admin':
+    toolUserButton = QToolButton()
+    toolUserButton.setIcon(QtGui.QIcon("icons8-user-folder-96.png"))
+    toolUserButton.clicked.connect(userClick)
+    toolBar.addWidget(toolUserButton)
+
+main_window.addToolBar(toolBar)
+
+main_window.showMaximized()
 main_window.show()
 app.exec_()
 save()
+userHandler.save()
 sys.exit()
 
 

@@ -3,10 +3,11 @@ from PySide2.QtWidgets import QDialog, QLineEdit, QPushButton, QVBoxLayout
 
 class LoginForm(QDialog):
 
-    def __init__(self, loginOk, parent=None):
+    def __init__(self, loginOk, userHandler, parent=None):
         super(LoginForm, self).__init__(parent)
 
         self.loginOk = loginOk
+        self.userHandler = userHandler
 
         # Create widgets
         self.name = QLineEdit("Username")
@@ -26,5 +27,7 @@ class LoginForm(QDialog):
 
     def ok(self):
 
-        if self.name.text() == 'admin' and self.password.text() == 'admin':
-            self.loginOk()
+        user = self.userHandler.getUser(self.name.text(), self.password.text())
+
+        if user != None:
+            self.loginOk(user)

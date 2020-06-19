@@ -1,0 +1,2 @@
+admin|admin|admin|admin|admin
+korisnik|korisnik|korisnik|korisnik|korisnik
