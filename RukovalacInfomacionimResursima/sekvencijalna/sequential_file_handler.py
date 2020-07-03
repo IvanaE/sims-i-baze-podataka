@@ -61,7 +61,7 @@ class SequentialFileHandler(DataHandler):
     def find_location_for_insert(self, obj):
 
         for i in range(len(self.data)):
-            if getattr(self.data[i], (self.key)) > getattr(obj, (self.metadata["key"])):
+            if getattr(self.data[i], (self.key)) > getattr(obj, (self.key)):
                 return i
         return None
 

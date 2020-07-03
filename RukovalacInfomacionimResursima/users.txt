@@ -1,2 +1,3 @@
 admin|admin|admin|admin|admin
 korisnik|korisnik|korisnik|korisnik|korisnik
+Ivana|Elez|ie|ie|korisnik
