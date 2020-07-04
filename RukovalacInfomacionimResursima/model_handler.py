@@ -1,5 +1,6 @@
 from PySide2.QtCore import QDir
-
+from os import path
+import os
 from data_source_type import DataSourceType
 from model import Model
 from sekvencijalna.sequential_file_handler import SequentialFileHandler
@@ -68,9 +69,26 @@ class ModelHandler:
 
         return DataSourceType.MYSQL
 
+    def getDataSourceTypeString(self, type):
+
+        if type == DataSourceType.SEQ:
+            return 'Seq'
+        if type == DataSourceType.SERIAL:
+            return 'Serial'
+
+        return ''
+
     def delete(self, model):
 
         self.models.remove(model)
+
+        pathString = QDir.currentPath() + '/data/' + model.dataSource + '.' + self.getDataSourceTypeString(model.dataSourceType)
+
+        if path.exists(pathString) == False:
+            return
+
+        os.remove(pathString)
+
 
     def getModelFromFile(self, fileName, type):
 

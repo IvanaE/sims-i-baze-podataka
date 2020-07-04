@@ -53,13 +53,14 @@ class ListDock(QtWidgets.QDockWidget):
 
 
     def deleteModel(self):
+        print(self.selectedModel)
 
         if self.selectedModel == None:
             return
 
         self.modelHandler.delete(self.selectedModel)
 
-        self.listDockModel.layoutChanged.emit()
+        self.file_system_model.layoutChanged.emit()
 
     def addModel(self):
 
@@ -71,7 +72,7 @@ class ListDock(QtWidgets.QDockWidget):
         self.modelHandler.addModel(name, source, self.getSourceTypeWithName(sourceType),
                                    self.getMetaModelWithName(metaModel))
         self.form.close()
-        self.listDockModel.layoutChanged.emit()
+        self.file_system_model.layoutChanged.emit()
 
     def file_clicked_handler(self, index):
         index = self.tree_view.currentIndex()
@@ -82,6 +83,7 @@ class ListDock(QtWidgets.QDockWidget):
 
 
         model = self.modelHandler.getModelFromFile(name, self.getSourceTypeWithName(type))
+        self.selectedModel = model
 
         self.handleModelClick(model)
 
