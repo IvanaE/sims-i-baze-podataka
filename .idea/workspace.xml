@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="71313315-ebf5-4e88-a273-266368d467fe" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1cSiI5JyJ0sclLyEyehKTcWKyBr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/view/icons" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view" />
+      <recent name="$PROJECT_DIR$/model" />
+      <recent name="$PROJECT_DIR$/util" />
+      <recent name="$PROJECT_DIR$/ui" />
+      <recent name="$PROJECT_DIR$/database" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/icons" />
+      <recent name="$PROJECT_DIR$/diagrams" />
+      <recent name="$PROJECT_DIR$/mysql" />
+      <recent name="$PROJECT_DIR$/data" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Dev">
+    <configuration name="Dev" type="PythonConfigurationType" factoryName="Python">
+      <module name="sims-bp-2019-version5g1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="sims-bp-2019-version5g1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sims-bp-2019-version5g1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/serijska" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/serijska/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="71313315-ebf5-4e88-a273-266368d467fe" name="Default Changelist" comment="" />
+      <created>1590528315091</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590528315091</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="180" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591020875033">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="180" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.24.1301.744@65.24.1301.744" timestamp="1591020875033" />
+    <state x="290" y="188" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592759717113">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="290" y="188" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1301.744@65.24.1301.744" timestamp="1592759717113" />
+    <state x="453" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590531410905">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="453" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/65.24.1301.744@65.24.1301.744" timestamp="1590531410905" />
+    <state x="458" y="147" key="EnvironmentVariablesDialog" timestamp="1590529280975">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="458" y="147" key="EnvironmentVariablesDialog/65.24.1301.744@65.24.1301.744" timestamp="1590529280975" />
+    <state x="503" y="141" width="424" height="482" key="FileChooserDialogImpl" timestamp="1598757033540">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="503" y="141" key="FileChooserDialogImpl/65.24.1301.744/1366.0.1680.1050@65.24.1301.744" timestamp="1598757033540" />
+    <state x="503" y="141" width="424" height="482" key="FileChooserDialogImpl/65.24.1301.744@65.24.1301.744" timestamp="1592754788577" />
+    <state width="1278" height="213" key="GridCell.Tab.0.bottom" timestamp="1598758946155">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1278" height="213" key="GridCell.Tab.0.bottom/65.24.1301.744/1366.0.1680.1050@65.24.1301.744" timestamp="1598758946155" />
+    <state width="1278" height="213" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1598730619222" />
+    <state width="1278" height="213" key="GridCell.Tab.0.center" timestamp="1598758946155">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1278" height="213" key="GridCell.Tab.0.center/65.24.1301.744/1366.0.1680.1050@65.24.1301.744" timestamp="1598758946155" />
+    <state width="1278" height="213" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1598730619222" />
+    <state width="1278" height="213" key="GridCell.Tab.0.left" timestamp="1598758946155">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1278" height="213" key="GridCell.Tab.0.left/65.24.1301.744/1366.0.1680.1050@65.24.1301.744" timestamp="1598758946155" />
+    <state width="1278" height="213" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1598730619221" />
+    <state width="1278" height="213" key="GridCell.Tab.0.right" timestamp="1598758946155">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1278" height="213" key="GridCell.Tab.0.right/65.24.1301.744/1366.0.1680.1050@65.24.1301.744" timestamp="1598758946155" />
+    <state width="1278" height="213" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1598730619222" />
+    <state x="209" y="24" key="SettingsEditor" timestamp="1590529530662">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="209" y="24" key="SettingsEditor/65.24.1301.744@65.24.1301.744" timestamp="1590529530662" />
+    <state x="378" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1590528329508">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="378" y="211" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1590528329508" />
+    <state x="573" y="24" width="765" height="744" key="find.popup" timestamp="1598758360831">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="573" y="24" width="765" height="744" key="find.popup/65.24.1301.744/1366.0.1680.1050@65.24.1301.744" timestamp="1598758360831" />
+    <state x="65" y="24" width="765" height="744" key="find.popup/65.24.1301.744@65.24.1301.744" timestamp="1592756811556" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/util/mysql_handler.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
