@@ -1,0 +1,13 @@
+{
+    "columns": [
+        "ustanova",
+        "oznaka",
+        "naziv",
+        "espb"
+    ],
+    "key": "oznaka",
+    "linked_files": [
+        "plan_studijske_grupe_data"
+    ],
+    "type": "serijska"
+}

@@ -1,0 +1,20 @@
+{
+    "columns": [
+        "ustanova",
+        "struka",
+        "broj_indeksa",
+        "ime",
+        "ime_roditelja",
+        "prezime",
+        "pol",
+        "adresa_stanovanja",
+        "telefon",
+        "jmbg",
+        "datum_rodjenja"
+    ],
+    "key": "broj_indeksa",
+    "linked_files": [
+        "tok_studija_data"
+    ],
+    "type": "serijska"
+}

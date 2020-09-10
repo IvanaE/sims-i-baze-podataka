@@ -1,0 +1,24 @@
+{
+    "user": "root",
+    "password": "",
+    "host": "localhost",
+    "database": "test_db",
+    "tables": [
+        {
+            "name": "test1",
+            "key": "id"
+        },
+        {
+            "name": "test2",
+            "key": "id"
+        },
+        {
+            "name": "test3",
+            "key": "id"
+        },
+        {
+            "name": "test4",
+            "key": "id"
+        }
+    ]
+}

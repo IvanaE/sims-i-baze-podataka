@@ -1,0 +1,36 @@
+{
+    "user": "root",
+    "password": "",
+    "host": "localhost",        
+    "database": "visokoskolska_ustanova_test",
+    "tables": [
+        {
+            "name": "nastavni_predmet",
+            "key": "oznaka"
+        },
+        {
+            "name": "nivo_studija",
+            "key": "oznaka"
+        },
+        {
+            "name": "plan_studijske_grupe",
+            "key": "oznaka_programa"
+        },
+        {
+            "name": "studenti",
+            "key": "broj_indeksa"
+        },
+        {
+            "name": "studijski_programi",
+            "key": "oznaka_programa"
+        },
+        {
+            "name": "tok_studija",
+            "key": "broj_indeksa"
+        },
+        {
+            "name": "visokoskolska_ustanova",
+            "key": "oznaka"
+        }
+    ]
+}

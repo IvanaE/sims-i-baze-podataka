@@ -1,0 +1,15 @@
+{
+    "columns": [
+        "ustanova",
+        "nivo",
+        "oznaka_programa",
+        "naziv_programa"
+    ],
+    "key": "oznaka_programa",
+    "linked_files": [
+        "tok_studija_data",
+        "plan_studijske_grupe_data"
+    ],
+    "type": "serijska",
+    "search_key": "ustanova"
+}

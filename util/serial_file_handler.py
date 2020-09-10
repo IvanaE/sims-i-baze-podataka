@@ -1,66 +1,92 @@
-from os import path
+from util.file_handler import FileHandler
+import json
 import pickle
 
-from PySide2.QtCore import QDir
 
-from util.data_handler import DataHandler
-
-class SerialFileHandler(DataHandler):
-    def __init__(self, model):
+class SerialFileHandler():
+    def __init__(self, path, meta_path):
         super().__init__()
-        self.model = model
-        self.key = self.model.metaModel.key
+        self.meta_path = meta_path
+        self.path = path
         self.data = []
+        self.metadata = {}
+        self.load_data()
 
-    def getPath(self):
-        return QDir.currentPath() + '/data/' + self.model.dataSource + '.Serial'
 
-    def save(self):
-        with open(self.getPath(), 'wb') as data_file:
-            pickle.dump(self.model.data, data_file)
-
-    
     def load_data(self):
+        try:
+            with open((self.path), 'rb') as dfile:
+                self.data = pickle.load(dfile)
 
-        if path.exists(self.getPath()) == False:
-            return
+        except EOFError as e:
+            self.data = []
 
-        with open(self.getPath(), 'rb') as dfile:
-            self.data = pickle.load(dfile)
+        with open(self.meta_path) as meta:
+            self.metadata = json.load(meta)
 
-    def get_one(self, id):
-        for d in self.data:
-            if getattr(d, (self.key)) == id:
-                return d
+    def get_one(self,id):
+        for i in self.data:
+            if getattr(i, (self.metadata["key"])) == id:
+                return i
+
         return None
-
+            
     def get_all(self):
+
         return self.data
 
     def insert(self, obj):
         self.data.append(obj)
-        with open(self.getPath(), 'wb') as f:
+        with open(self.file_path, 'wb') as f:
             pickle.dump(self.data, f)
 
-    def edit(self, obj):
-        keyValue = obj[self.key]
-        oldObj = self.get_one(keyValue)
-        index = self.data.index(oldObj)
-        self.data[index] = obj
+    def insert_many(self, objects):
+        for obj in objects:
+            self.data.append(obj)
 
-    def insert_many(self, list):
-
-        for item in list:
-            self.insert(item)
-
-    def delete_one(self, obj):
-        keyValue = obj[self.key]
-        oldObj = self.get_one(keyValue)
-        self.data.remove(oldObj)
+        with open(self.file_path, 'wb') as f:
+            pickle.dump(self.data, f)
 
 
+    def edit(self, id, value):
+        found = False
+        index = 0
+        for i in self.data:
+            if getattr(i, (self.metadata["key"])) == id:
+                
+                self.data[index] = value
+                found = True
+            else:
+                index += 1
 
+
+        else:
+            with open(self.file_path, 'wb') as data_file:
+                pickle.dump(self.data, data_file)
+
+
+    def delete_one(self, id):
+
+        for i in self.data:
+            if i[self.metadata["key"]] == id:
+                self.data.remove(i)
+
+        with open(self.file_path, 'wb') as data:
+            pickle.dump(self.data, data)
+
+    def delete_all(self):
+        for i in self.data:
+            self.data.remove(i)
+
+        with open(self.file_path, 'wb') as data:
+            pickle.dump(self.data, data)
+
+
+    def print_all(self):
+        lista = self.get_all()
+
+
+    def save(self):
+        with open(self.file_path, 'wb') as data:
+                pickle.dump(self.data, data)
     
-
-        
-

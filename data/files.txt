@@ -1,0 +1,7 @@
+visokoskolska_ustanova_data
+tok_studija_data
+studijski_program_data
+studenti_data
+plan_studijske_grupe_data
+nivo_studija_data
+nastavni_predmet_data

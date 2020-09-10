@@ -1,0 +1,21 @@
+{
+    "columns": [
+        "ustanova",
+        "oznaka_programa",
+        "student_iz_ustanove",
+        "struka",
+        "broj_indeksa",
+        "skolska_godina",
+        "godina_studija",
+        "blok",
+        "redni_broj_upisa",
+        "datum_upisa",
+        "datum_overe",
+        "espb_pocetni",
+        "espb_krajnji"
+    ],
+    "key": "skolska_godina",
+    "linked_files": [],
+    "type": "serijska",
+    "search_key": "broj_indeksa"
+}

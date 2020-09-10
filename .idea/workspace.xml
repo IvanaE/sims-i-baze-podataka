@@ -1,7 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71313315-ebf5-4e88-a273-266368d467fe" name="Default Changelist" comment="" />
+    <list default="true" id="71313315-ebf5-4e88-a273-266368d467fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/icons/create_file.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/icons/delete.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/icons/insert.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/icons/search.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/metaData.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/metaModels.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/nastavni_predmet.Serial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/nivo_studija.Serial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/plan_studijske_grupe.Serial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/student.Seq" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/student.Serial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/studijski_programi.Serial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tok_studija.Serial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ustanova.Serial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/baza.mwb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/baza.mwb.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagrams/Rukovalac_informacionim_resursima_v3.0.asta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/data_source.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/data_source_type.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/meta_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/meta_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/data_handler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/mysql_handler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/sequential_file_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/sequential_file_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/serial_file_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/serial_file_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/add_model_form.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/icons/icons8-add-image-96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/icons/icons8-delete-96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/icons/icons8-exit-96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/icons/icons8-user-folder-96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/list_dock.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/login_form.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/meta_model_handler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/model_handler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/model_table_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/model_view_widget.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user_handler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user_table_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user_widget.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,30 +67,38 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1cSiI5JyJ0sclLyEyehKTcWKyBr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/view/icons" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/diagrams" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/view/icons" />
+      <recent name="$PROJECT_DIR$/diagrams" />
+      <recent name="$PROJECT_DIR$/mysql" />
+      <recent name="$PROJECT_DIR$/data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/view" />
       <recent name="$PROJECT_DIR$/model" />
       <recent name="$PROJECT_DIR$/util" />
       <recent name="$PROJECT_DIR$/ui" />
       <recent name="$PROJECT_DIR$/database" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/view/icons" />
-      <recent name="$PROJECT_DIR$/diagrams" />
-      <recent name="$PROJECT_DIR$/mysql" />
-      <recent name="$PROJECT_DIR$/data" />
     </key>
   </component>
   <component name="RunManager" selected="Python.Dev">
@@ -138,61 +199,56 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="180" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591020875033">
+    <state x="180" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599662758042">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="180" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.24.1301.744@65.24.1301.744" timestamp="1591020875033" />
-    <state x="290" y="188" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592759717113">
+    <state x="180" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.24.1301.744@65.24.1301.744" timestamp="1599662758042" />
+    <state x="290" y="188" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599665252847">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="290" y="188" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1301.744@65.24.1301.744" timestamp="1592759717113" />
-    <state x="453" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590531410905">
-      <screen x="65" y="24" width="1301" height="744" />
-    </state>
-    <state x="453" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/65.24.1301.744@65.24.1301.744" timestamp="1590531410905" />
-    <state x="458" y="147" key="EnvironmentVariablesDialog" timestamp="1590529280975">
-      <screen x="65" y="24" width="1301" height="744" />
-    </state>
-    <state x="458" y="147" key="EnvironmentVariablesDialog/65.24.1301.744@65.24.1301.744" timestamp="1590529280975" />
+    <state x="290" y="188" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1301.744@65.24.1301.744" timestamp="1599665252847" />
     <state x="503" y="141" width="424" height="482" key="FileChooserDialogImpl" timestamp="1598757033540">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="503" y="141" key="FileChooserDialogImpl/65.24.1301.744/1366.0.1680.1050@65.24.1301.744" timestamp="1598757033540" />
     <state x="503" y="141" width="424" height="482" key="FileChooserDialogImpl/65.24.1301.744@65.24.1301.744" timestamp="1592754788577" />
-    <state width="1278" height="213" key="GridCell.Tab.0.bottom" timestamp="1598758946155">
+    <state width="1278" height="213" key="GridCell.Tab.0.bottom" timestamp="1599670828963">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state width="1278" height="213" key="GridCell.Tab.0.bottom/65.24.1301.744/1366.0.1680.1050@65.24.1301.744" timestamp="1598758946155" />
-    <state width="1278" height="213" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1598730619222" />
-    <state width="1278" height="213" key="GridCell.Tab.0.center" timestamp="1598758946155">
+    <state width="1278" height="213" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1599670828963" />
+    <state width="1278" height="213" key="GridCell.Tab.0.center" timestamp="1599670828962">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state width="1278" height="213" key="GridCell.Tab.0.center/65.24.1301.744/1366.0.1680.1050@65.24.1301.744" timestamp="1598758946155" />
-    <state width="1278" height="213" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1598730619222" />
-    <state width="1278" height="213" key="GridCell.Tab.0.left" timestamp="1598758946155">
+    <state width="1278" height="213" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1599670828962" />
+    <state width="1278" height="213" key="GridCell.Tab.0.left" timestamp="1599670828962">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state width="1278" height="213" key="GridCell.Tab.0.left/65.24.1301.744/1366.0.1680.1050@65.24.1301.744" timestamp="1598758946155" />
-    <state width="1278" height="213" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1598730619221" />
-    <state width="1278" height="213" key="GridCell.Tab.0.right" timestamp="1598758946155">
+    <state width="1278" height="213" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1599670828962" />
+    <state width="1278" height="213" key="GridCell.Tab.0.right" timestamp="1599670828963">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state width="1278" height="213" key="GridCell.Tab.0.right/65.24.1301.744/1366.0.1680.1050@65.24.1301.744" timestamp="1598758946155" />
-    <state width="1278" height="213" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1598730619222" />
-    <state x="209" y="24" key="SettingsEditor" timestamp="1590529530662">
+    <state width="1278" height="213" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1599670828963" />
+    <state x="209" y="24" key="SettingsEditor" timestamp="1599662861599">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="209" y="24" key="SettingsEditor/65.24.1301.744@65.24.1301.744" timestamp="1590529530662" />
-    <state x="378" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1590528329508">
-      <screen x="65" y="24" width="1301" height="744" />
-    </state>
-    <state x="378" y="211" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1590528329508" />
-    <state x="573" y="24" width="765" height="744" key="find.popup" timestamp="1598758360831">
+    <state x="209" y="24" key="SettingsEditor/65.24.1301.744@65.24.1301.744" timestamp="1599662861599" />
+    <state x="65" y="24" width="765" height="744" key="find.popup" timestamp="1599666367508">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="573" y="24" width="765" height="744" key="find.popup/65.24.1301.744/1366.0.1680.1050@65.24.1301.744" timestamp="1598758360831" />
-    <state x="65" y="24" width="765" height="744" key="find.popup/65.24.1301.744@65.24.1301.744" timestamp="1592756811556" />
+    <state x="65" y="24" width="765" height="744" key="find.popup/65.24.1301.744@65.24.1301.744" timestamp="1599666367508" />
+    <state x="378" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1599664816817">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="378" y="89" width="672" height="678" key="search.everywhere.popup/65.24.1301.744@65.24.1301.744" timestamp="1599664816817" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -201,11 +257,6 @@
           <url>file://$PROJECT_DIR$/util/mysql_handler.py</url>
           <line>7</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

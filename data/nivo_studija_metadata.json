@@ -1,0 +1,11 @@
+{
+    "columns": [
+        "oznaka",
+        "naziv"
+    ],
+    "key": "oznaka",
+    "linked_files": [
+        "studijski_program_data"
+    ],
+    "type": "serijska"
+}

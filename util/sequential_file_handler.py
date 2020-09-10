@@ -1,97 +1,110 @@
-from os import path
+from util.file_handler import FileHandler
+import json
 import pickle
 
-from PySide2.QtCore import QDir
 
-from util.data_handler import DataHandler
-
-class SequentialFileHandler(DataHandler):
-    def __init__(self, model):
+class SequentialFileHandler():
+    def __init__(self, path, meta_path):
         super().__init__()
-        self.model = model
+        self.meta_path = meta_path
+        self.path = path
+        self.metadata = {}
         self.data = []
-        self.key = self.model.metaModel.key
+        self.load_data()
 
-    def getPath(self):
-        return QDir.currentPath() + '/data/' + self.model.dataSource + '.Seq'
+    def load_data(self):
+        with open((self.path), 'rb') as dfile:
+            self.data = pickle.load(dfile)
 
+        with open(self.meta_path) as meta:
+            self.metadata = json.load(meta)
+
+    def binary_search(self, id):
+        bot = 0
+        top = len(self.data)-1
+        while bot <= top:
+            mid = (top+bot)//2
+            key = self.metadata["key"]
+            if self.data[mid][key] == id:
+                return mid
+            elif self.data[mid][key] < id:
+                bot = mid+1
+            else:
+                top = mid - 1
+        return None
+
+    def get_one(self,id):
+
+        index = self.binary_search(id)
+        
+        return self.data[index]
+            
+            
     def get_all(self):
         return self.data
 
-    def save(self):
-        with open(self.getPath(), 'wb') as data_file:
-            pickle.dump(self.model.data, data_file)
+    def insert(self, id, obj):
 
-    def load_data(self):
 
-        if path.exists(self.getPath()) == False:
-            return
+        top = len(self.data)-1
+        found = False
+        biggest = True
+        bot = 0
 
-        with open(self.getPath(), 'rb') as dfile:
-            self.data = pickle.load(dfile)
+        while bot <= top:
 
-    def binary_search(self, id, start, end):
+            mid = (top+bot)//2
+            
+            key = self.metadata["key"]
 
-        while start <= end:
-
-            mid = start + (end - start) // 2
-
-            # Check if x is present at mid
-            if getattr(self.data[mid], (self.key)) == id:
-                return mid
-
-                # If x is greater, ignore left half
-            elif getattr(self.data[mid], (self.key)) < id:
-                start = mid + 1
-
-            # If x is smaller, ignore right half
+            if self.data[mid][key] == id:
+                found = True
+                break
+            elif self.data[mid][key] > id:
+                self.data.insert(mid, obj)
+                biggest = False
+                break
             else:
-                end = mid - 1
+                bot = mid + 1
+                
+        if found == False and biggest == True:
+            self.data.insert(mid+1, obj)
+        
+        if found == False:
+            with open(self.file_path, 'wb') as f:
+                pickle.dump(self.data, f)
+        
 
-        return None  # nismo pronasli
+    def insert_many(self, objects):
 
-    def get_one(self, id):
-        index = self.binary_search(id, 0, (len(self.data)))
+        for obj in objects:
+            key = obj[self.metadata["key"]]
+            self.insert(key, obj)
 
-        if index == None:
-            return None
+        with open(self.file_path, 'wb') as f:
+            pickle.dump(self.data, f)
 
-        return self.data[index]
 
-    def find_location_for_insert(self, obj):
+    def edit(self, id, value):
+        index = self.binary_search(id)
+        self.data[index] = value
 
-        for i in range(len(self.data)):
-            if getattr(self.data[i], (self.key)) > getattr(obj, (self.key)):
-                return i
-        return None
+        with open(self.file_path, 'wb') as f:
+            pickle.dump(self.data, f)
 
-    def insert(self, obj):
+    def delete_one(self, id):
 
-        index = self.binary_search(obj[self.key], 0, (len(self.data)))
+        index = self.binary_search(id)
+        if index is not None:
+            self.data.remove(self.data[index])
+            with open(self.file_path, 'wb') as data:
+                pickle.dump(self.data, data)
 
-        if index != None:
-            return
 
-        location = self.find_location_for_insert(obj)
-        if (location == None):
-            self.data.append(obj)
-        else:
-            self.data.insert(location - 1, obj)
+    def print_all(self):
+        lista = self.get_all()
 
-    def edit(self, obj):
-        index = self.binary_search(id, 0, (len(self.data)))
 
-        if index == None:
-            return None
-
-        self.data[index] = obj
-
-    def delete_one(self, obj):
-        keyValue = obj[self.key]
-        oldObj = self.get_one(keyValue)
-        self.data.remove(oldObj)
-
-    def insert_many(self, list):
-
-        for item in list:
-            self.insert(item)
+    def save(self):
+        with open(self.file_path, 'wb') as data:
+            pickle.dump(self.data, data)
